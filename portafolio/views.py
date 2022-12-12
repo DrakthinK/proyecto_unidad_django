@@ -96,7 +96,7 @@ class verIps(LoginRequiredMixin, View):
                 ipvisita=ip
                     )
             ip.save()
-        IPS=Ipvisitante.objects.filter(ipvisita=ip)
+        IPS=Ipvisitante.objects.all()
         return render(request, 'ipvisitas.html', {
             'IPS': IPS
         })
