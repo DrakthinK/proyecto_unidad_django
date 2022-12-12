@@ -1,0 +1,69 @@
+{% extends 'layout/base_login.html' %} {% block content %}
+<!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+            <div class="container mt-10">
+
+
+                              <main class="container">
+                               <div class="row">
+                                 <div class="col-md-4 offset-md-4">
+                             <form action="/signup/" method="POST" class="card card-body mt-5 bg-dark">
+                                  <h1 class="text-light bg-dark text-center">Registar</h1>
+                                <span>{{error}}</span>
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                  <label for='username' >Username:</label>
+                                  <input type="text" name="username" class="form-control " placeholder="escribir tu usuario">
+                                </div>
+
+                               <div class="mb-3">
+                                  <label for='password' >contraseña:</label>
+                                  <input type="password" name="password1" class="form-control" placeholder="escribir contraseña">
+                                </div>
+
+                               <div class="mb-3">
+                                  <label for='password2'>confirmar contraseña:</label>
+                                  <input type="password" name="password2" class="form-control" placeholder="confirmar tu contraseña">
+                                </div>
+                                <button class="btn btn-secondary">Signup</button>
+                              </form>
+
+                                 </div>
+                               </div>
+                              </main>
+                            </div>
+      </div>
+    </div><!-- End Page Header -->
+<!--<div class="container mt-10">-->
+
+
+<!--  <main class="container">-->
+<!--   <div class="row">-->
+<!--     <div class="col-md-4 offset-md-4">-->
+<!-- <form action="/signup/" method="POST" class="card card-body mt-5 ">-->
+<!--      <h1 class="text-light bg-dark text-center">Registar</h1>-->
+<!--    {{error}}-->
+<!--    {% csrf_token %}-->
+<!--    <div class="mb-3">-->
+<!--      <label for='username' class="text-dark">Username:</label>-->
+<!--      <input type="text" name="username" class="form-control " placeholder="escribir tu usuario">-->
+<!--    </div>-->
+
+<!--   <div class="mb-3">-->
+<!--      <label for='password' class="text-dark">contraseña:</label>-->
+<!--      <input type="password" name="password1" class="form-control" placeholder="escribir contraseña">-->
+<!--    </div>-->
+
+<!--   <div class="mb-3">-->
+<!--      <label for='password2'>confirmar contraseña:</label>-->
+<!--      <input type="password" name="password2" class="form-control" placeholder="confirmar tu contraseña">-->
+<!--    </div>-->
+<!--    <button class="btn btn-dark">Signup</button>-->
+<!--  </form>-->
+
+<!--     </div>-->
+<!--   </div>-->
+<!--  </main>-->
+<!--</div>-->
+{% endblock %}

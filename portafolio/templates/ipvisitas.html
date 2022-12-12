@@ -1,0 +1,47 @@
+{% extends 'layout/base_inicio.html' %}
+
+{% block content %}
+{% load static %}
+  <main id="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2>IP DE LOS VISITANTES DE MI SITIO WEB</h2>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="{% static 'assets/img/unnamed.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-5 content">
+            <h2>Esto son las direccion ip de mis visitantes:</h2>
+            <div class="row">
+              <div class="col-lg-6">
+                 <ul>
+                   {% for ip in IPS%}
+                    <li><i class="bi bi-chevron-right"></i><span>{{ip.ipvisita}}</span></li>
+                  {% endfor%}
+                 </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+  </main><!-- End #main -->
+
+
+{% endblock %}

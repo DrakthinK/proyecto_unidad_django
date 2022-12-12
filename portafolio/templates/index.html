@@ -1,0 +1,53 @@
+{% extends 'layout/base_inicio.html' %}
+
+{% block content %}
+{% load static %}
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+
+          {% if user.is_authenticated%}
+          <h2>Hola soy <span>{{user.get_username}}</span> un profesional en el desarrollador web</h2>
+
+          <p>Soy un apacionado del mundo de la tecnologia y me especializo en el desarrollo web backend.</p>
+          <p>En la parte de abajo se puede apreciar el trabajo realizado en mi trayectoria</p>
+          <a href="/contacto/" class="btn-get-started">Disponible para contratar</a>
+          {% else%}
+          <h2> welcome a Professional Photographer from New York City</h2>
+          <p>Blanditiis praesentium aliquam illum tempore incidunt debitis dolorem magni est deserunt sed qui libero. Qui voluptas amet.</p>
+          <a href="/" class="btn-get-started">Available for hire</a>
+          {% endif%}
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+<main id="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container-fluid">
+
+        <div class="row gy-4 justify-content-center">
+
+          {% for proyecto in proyectos %}
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="{{proyecto.foto.url}}" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="{{proyecto.foto.url}}" title="{{proyecto.titulo}}" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="{% url 'proyecto' proyecto.id %}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          {% endfor%}
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+  </main><!-- End #main -->
+{% endblock %}
