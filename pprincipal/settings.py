@@ -74,19 +74,19 @@ WSGI_APPLICATION = 'pprincipal.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+#mysql://root:PKqgftn7ByPy7pgckgx8@containers-us-west-162.railway.app:7986/railway
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         #'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': 'dbproyectos',
+        'NAME': 'railway',
         'USER': 'root',
         # DO NOT PUSH TO REPOSITORY
-        'PASSWORD': 'root2021',
+        'PASSWORD': 'PKqgftn7ByPy7pgckgx8',
         # DO NOT PUSH TO REPOSITORY
-        'HOST': 'localhost',
+        'HOST': 'containers-us-west-162.railway.app',
         # DO NOT PUSH TO REPOSITORY
-        'PORT': '3306'
+        'PORT': '7986'
     }
 }
 
